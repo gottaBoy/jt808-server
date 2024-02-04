@@ -31,6 +31,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.test.skip>true</maven.test.skip>
         <mariadb.version>3.1.4</mariadb.version>
+        <mysql.version>8.0.25</mysql.version>
     </properties>
 
     <url>https://gitee.com/yezhihao/jt808-server</url>
@@ -64,7 +65,11 @@
                 <artifactId>mybatis-typehandlers-jsr310</artifactId>
                 <version>1.0.2</version>
             </dependency>
-
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.mariadb.jdbc</groupId>
                 <artifactId>mariadb-java-client</artifactId>

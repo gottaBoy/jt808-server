@@ -2,10 +2,10 @@ spring:
   application:
     name: jt808
   datasource:
-    url: jdbc:h2:file:~/.h2/jt;auto_server=true;ignorecase=true;mode=mysql
+    url: jdbc:mysql://localhost:3306/jt?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
     username: root
-    password: 123
-    driver-class-name: org.h2.Driver
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
       minimum-idle: 8
@@ -52,6 +52,8 @@ mybatis:
 
 server:
   port: 8000
+  servlet:
+    context-path: /jt808
 
 jt-server:
   jt808:
