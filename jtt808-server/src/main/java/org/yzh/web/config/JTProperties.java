@@ -30,6 +30,9 @@ public class JTProperties {
     private C0801 t0801;
     private C9208 t9208;
     private C9206 t9206;
+    
+    // UWB配置
+    private UWB uwb;
 
     @Data
     public static class C0801 {
@@ -104,5 +107,40 @@ public class JTProperties {
         if (request.getUdpPort() == 0)
             request.setUdpPort(t9208.port);
         return request;
+    }
+
+    @Data
+    public static class UWB {
+        /** 是否启用UWB服务 */
+        private boolean enabled = false;
+        /** UWB TCP端口 */
+        private int tcpPort = 7200;
+        /** UWB UDP端口 */
+        private int udpPort = 7201;
+        /** UWB心跳超时(秒) */
+        private int idleTimeout = 300;
+        /** 数据转发速率限制(kb/s) */
+        private int rateLimit = 50;
+    }
+
+    // UWB相关getter方法
+    public boolean isUwbEnabled() {
+        return uwb != null && uwb.isEnabled();
+    }
+
+    public int getUwbTcpPort() {
+        return uwb != null ? uwb.getTcpPort() : 7200;
+    }
+
+    public int getUwbUdpPort() {
+        return uwb != null ? uwb.getUdpPort() : 7201;
+    }
+
+    public int getUwbIdleTimeout() {
+        return uwb != null ? uwb.getIdleTimeout() : 300;
+    }
+
+    public int getUwbRateLimit() {
+        return uwb != null ? uwb.getRateLimit() : 50;
     }
 }

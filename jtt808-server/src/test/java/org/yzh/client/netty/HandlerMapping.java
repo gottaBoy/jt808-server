@@ -20,6 +20,7 @@ public class HandlerMapping {
         }
     }
 
+    @SuppressWarnings("unchecked")
     private void initial(String packageName) {
         List<Class> handlerClassList = ClassUtils.getClassList(packageName, Endpoint.class);
 
@@ -41,6 +42,7 @@ public class HandlerMapping {
     }
 
     @SneakyThrows
+    @SuppressWarnings("deprecation")
     private Object newInstance(Class handlerClass) {
         return handlerClass.newInstance();
     }

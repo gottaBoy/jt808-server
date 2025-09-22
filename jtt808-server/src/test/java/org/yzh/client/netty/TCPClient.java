@@ -35,6 +35,7 @@ public class TCPClient {
         this.config = config;
     }
 
+    @SuppressWarnings("unchecked")
     private void startInternal() {
         try {
             this.workerGroup = new NioEventLoopGroup();

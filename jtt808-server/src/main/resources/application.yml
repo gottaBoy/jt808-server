@@ -28,14 +28,21 @@ jt-server:
     idle-timeout: 180
     message-package: org.yzh.protocol
     t0801:
-      path: D:/jt_data/media_file
+      path: ./jt_data/media_file
     t9208:
       host: 127.0.0.1
       port: 7200
       enabled: true
-      path: D:/jt_data/alarm_file
+      path: ./jt_data/alarm_file
     t9206:
       host: 127.0.0.1
       port: 21
       username: test
       password: test
+    # UWB定位数据服务配置
+    uwb:
+      enabled: true
+      tcp-port: 7202
+      udp-port: 7203
+      idle-timeout: 300
+      rate-limit: 50

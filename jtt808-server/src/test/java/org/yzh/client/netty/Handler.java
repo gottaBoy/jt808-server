@@ -22,6 +22,7 @@ public class Handler {
         this.targetMethod = actionMethod;
     }
 
+    @SuppressWarnings("unchecked")
     public <T extends Message> T invoke(Object... args) throws InvocationTargetException, IllegalAccessException {
         return (T) targetMethod.invoke(targetObject, args);
     }
